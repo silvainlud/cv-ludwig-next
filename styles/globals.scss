@@ -1,0 +1,22 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+
+  color: var(--color-text);
+  font-size: 16px;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+:root {
+  --color-black: #2C3E50;
+  --color-black-light: #{lighten(#2C3E50, 20%)};
+  --color-primary: #63BEFF;
+  --color-primary-light: #{lighten(#63BEFF, 12%)};
+  --color-text: var(--color-black);
+  --color-text-light: var(--color-black-light);
+}
