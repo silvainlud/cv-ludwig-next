@@ -1,16 +1,11 @@
-import {NextComponentType, NextPage} from "next";
-
 import styles from './BaseHeader.module.scss'
 import Image from "next/future/image";
 import SilvainEuImg from './../../public/silvain-eu.png'
 import HeaderAppImg from './../../public/undraw_programming_re_kg9v 1.png'
-import TwitterLogo from './../../public/media/Logo black 1.svg'
-import GithubLogo from './../../public/media/Octicons-mark-github 1.svg'
-import GitlabLogo from './../../public/media/gitlab-logo-600 1.svg'
-import LinkedinLogo from './../../public/media/LinkedIn_Logo 1.svg'
 import Button from "../Button";
+import MediaList from "./Items/MediaList";
 
-const BaseHeader: NextComponentType = () => {
+const BaseHeader = () => {
     return <header className={styles.header}>
         <div className={styles.headerBar}>
             <div className={styles.headerBar__title}>
@@ -34,20 +29,7 @@ const BaseHeader: NextComponentType = () => {
                 <div className={styles.headerApp__content_hello}>Bonjour</div>
                 <div className={styles.headerApp__content_name}>Je suis Ludwig SILVAIN</div>
                 <div className={styles.headerApp__content_description}>Développeur Application Web Fullstack</div>
-                <div className={styles.headerApp__content_media}>
-                    <a className={styles.headerApp__content_media__item} href="">
-                        <Image src={TwitterLogo} alt="Twitter"/>
-                    </a>
-                    <a className={styles.headerApp__content_media__item} href="">
-                        <Image src={GithubLogo} alt="Github"/>
-                    </a>
-                    <a className={styles.headerApp__content_media__item} href="">
-                        <Image src={GitlabLogo} alt="Gitlab"/>
-                    </a>
-                    <a className={styles.headerApp__content_media__item} href="">
-                        <Image src={LinkedinLogo} alt="Linkedin"/>
-                    </a>
-                </div>
+                <MediaList/>
                 <div>
                     <Button href="">En savoir plus</Button>
                 </div>

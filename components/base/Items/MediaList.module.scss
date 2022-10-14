@@ -1,0 +1,19 @@
+@import "./../../vars";
+
+.media {
+  margin-top: 10px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, 24px);
+  align-items: center;
+  margin-bottom: 40px;
+  width: 100%;
+  justify-content: center;
+
+  @media screen and (min-width: $width_separator_1) {
+    justify-content: flex-start;
+  }
+
+  .media__item {
+  }
+}
