@@ -1,9 +1,26 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
 import Base from "../components/base/Base";
+import {AboutMe, Curriculum, Hobbies} from "../components/pages/IndexPart";
+import {getHobbies, Hobby} from "../posts";
 
+export async function getStaticProps() {
 
-const Home: NextPage = () => {
+    const hobbies = await getHobbies()
+
+    return {
+        props: {
+            hobbies
+        }
+    }
+}
+
+interface HomeProps {
+    hobbies: Hobby[]
+}
+
+const Home: NextPage<HomeProps> = ({hobbies}) => {
+
     return (
         <>
             <Head>
@@ -12,10 +29,18 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
-            <Base/>
+            <Base>
+                <>
+                    <AboutMe/>
+                    <Hobbies hobbies={hobbies}/>
+                    <Curriculum/>
+                </>
+            </Base>
 
         </>
     )
 }
 
 export default Home
+
+

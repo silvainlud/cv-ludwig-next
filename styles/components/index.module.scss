@@ -1,0 +1,161 @@
+@import "./../../components/vars";
+
+$main_max_width: 1180px;
+$about_me_img_width: 350px;
+
+.aboutMe {
+  max-width: #{$main_max_width - 250px};
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  grid-gap: 40px;
+
+  @media screen and (min-width: $width_separator_1) {
+    grid-template-columns: 1fr $about_me_img_width;
+  }
+
+  .aboutMe__image {
+    border-radius: 5px;
+    max-height: $about_me_img_width;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .aboutMe__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @media screen and (min-width: $width_separator_1) {
+      text-align: unset;
+    }
+
+    .aboutMe__presentation {
+      text-indent: 25px;
+    }
+  }
+
+}
+
+.hobbies {
+  max-width: $main_max_width;
+  width: 100%;
+
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .hobbies__list {
+    width: 100%;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+  }
+
+}
+
+$hobby_card_radius: 15px;
+$hobby_card_img_size: 130px;
+$hobby_card_img_size_div: 2.5;
+
+.hobbies__card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #DDDDDD;
+  border-radius: $hobby_card_radius;
+
+  margin-top: $hobby_card_img_size/$hobby_card_img_size_div;
+  margin-right: $hobby_card_img_size/$hobby_card_img_size_div;
+
+  .hobbies__card_head {
+    background: #F4F6F8;
+    position: relative;
+    border-top-left-radius: $hobby_card_radius;
+    border-top-right-radius: $hobby_card_radius;
+    padding: 20px 25px;
+
+    h3 {
+      margin: 0;
+    }
+
+    img {
+      right: #{$hobby_card_img_size/$hobby_card_img_size_div*-1};
+      top: #{$hobby_card_img_size/$hobby_card_img_size_div*-1};
+      position: absolute;
+
+      width: $hobby_card_img_size;
+      height: $hobby_card_img_size;
+      object-fit: cover;
+      border-radius: 150px;
+    }
+  }
+
+  .hobbies__card_body {
+    padding: 10px 25px;
+    text-indent: 25px;
+  }
+}
+
+
+.curriculum {
+  width: calc(100% + 20px * 2);
+  display: flex;
+  background: linear-gradient(256.8deg, rgba(99, 190, 255, 0.85) -12.65%, rgba(99, 190, 255, 0.72) -12.64%, rgba(99, 190, 255, 0.15) 41.63%, rgba(99, 190, 255, 0.87) 108.77%);
+  background-size: contain;
+  margin: 0 -20px;
+  padding: 250px 20px;
+  position: relative;
+  min-height: 1000px;
+  overflow: hidden;
+  align-items: center;
+
+  flex-direction: column;
+
+  &:before {
+    width: calc(100% + 20px * 2);
+    margin: 0 -20px;
+    height: 218px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    content: url("./../../public/cv-bg-mask-top.svg");
+
+  }
+
+  &:after {
+    width: calc(100% + 20px * 2);
+    margin: 0 -20px;
+    bottom: -20px;
+    left: 0;
+    position: absolute;
+    content: url("./../../public/cv-bg-mask-bottom.svg");
+
+    //background: ;
+    background-size: cover;
+
+  }
+
+
+  .curriculum__path {
+    position: relative;
+    $curriculum_image_size: 80px;
+
+    margin: 70px 0 20px;
+
+
+    & > .curriculum__path__image {
+      width: calc(100vw - 80px);
+      max-width: 1500px;
+      height: auto;
+    }
+
+  }
+
+}

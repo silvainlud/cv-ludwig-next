@@ -9,7 +9,7 @@ body {
 }
 
 * {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 :root {
@@ -19,4 +19,16 @@ body {
   --color-primary-light: #{lighten(#63BEFF, 12%)};
   --color-text: var(--color-black);
   --color-text-light: var(--color-black-light);
+}
+
+main a:not(.btn) {
+  color: var(--color-text-light);
+  text-decoration: none;
+
+
+  transition: color 0.3s;
+  &:hover, &:focus {
+    color: var(--color-text);
+    text-decoration: underline;
+  }
 }
