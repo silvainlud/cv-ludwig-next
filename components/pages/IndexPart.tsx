@@ -1,5 +1,6 @@
 import ProfilPhoto from './../../public/profil.png'
 import CurriculumTreeImage from '../../public/cv-tree_xl.svg'
+import CurriculumTreeSmallImage from '../../public/cv-tree_small.svg'
 import Image from "next/future/image";
 import styles from '../../styles/components/index.module.scss'
 import {Hobby} from "../../posts";
@@ -75,7 +76,10 @@ export const Curriculum = () => {
     return <section id="curriculum" className={styles.curriculum}>
         <h2>Mon parcours</h2>
         <div className={styles.curriculum__path}>
-            <Image alt={"Curriculum"} src={CurriculumTreeImage} className={styles.curriculum__path__image}></Image>
+            <Image alt={"Curriculum"} src={CurriculumTreeImage}
+                   className={styles.curriculum__path__image + " " + styles.curriculum__path__image__xl}></Image>
+            <Image alt={"Curriculum"} src={CurriculumTreeSmallImage}
+                   className={styles.curriculum__path__image + " " + styles.curriculum__path__image__small}></Image>
         </div>
     </section>
 }
