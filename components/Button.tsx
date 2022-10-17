@@ -3,15 +3,16 @@ import React from "react";
 
 interface ButtonProps {
     href?: string
-    children: React.ReactNode
+    children: React.ReactNode,
+    onClick?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-const Button = ({children, href, ...otherProps}: ButtonProps) => {
+const Button = ({children, href, onClick, ...otherProps}: ButtonProps) => {
 
     return <>
         {href === null ?
-            <button className={"btn"} {...otherProps}>{children}</button> :
-            <a href={href} className={"btn"} {...otherProps}>{children}</a>
+            <button className={"btn"} {...otherProps} onClick={onClick}>{children}</button> :
+            <a href={href} className={"btn"} onClick={onClick} {...otherProps}>{children}</a>
         }
 
         <style jsx>{`
@@ -25,8 +26,10 @@ const Button = ({children, href, ...otherProps}: ButtonProps) => {
             color: var(--color-black);
             font-size: 24px;
             border-radius: 50px;
-            
+
             transition: 0.3s background-color;
+
+            cursor: pointer;
 
 
           }

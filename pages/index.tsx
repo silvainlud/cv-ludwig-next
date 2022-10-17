@@ -1,7 +1,7 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
 import Base from "../components/base/Base";
-import {AboutMe, Curriculum, Hobbies} from "../components/pages/IndexPart";
+import {AboutMe, ContactMe, Curriculum, Hobbies} from "../components/pages/IndexPart";
 import {getHobbies, Hobby} from "../posts";
 
 export async function getStaticProps() {
@@ -34,6 +34,7 @@ const Home: NextPage<HomeProps> = ({hobbies}) => {
                     <AboutMe/>
                     <Hobbies hobbies={hobbies}/>
                     <Curriculum/>
+                    <ContactMe/>
                 </>
             </Base>
 
