@@ -107,7 +107,7 @@ $hobby_card_img_size_div: 2.5;
 .curriculum {
   width: calc(100% + 20px * 2);
   display: flex;
-  background: linear-gradient(256.8deg, rgba(99, 190, 255, 0.85) -12.65%, rgba(99, 190, 255, 0.72) -12.64%, rgba(99, 190, 255, 0.15) 41.63%, rgba(99, 190, 255, 0.87) 108.77%);
+  background: linear-gradient(256.8deg, rgba(99, 190, 255, 0.85) -12.65%, rgba(99, 190, 255, 0.72) -12.64%, rgba(194, 211, 223, 0.18) 20.23%, rgba(99, 190, 255, 0.37) 41.63%, rgba(183, 209, 227, 0.176453) 70.83%, rgba(99, 190, 255, 0.72) 108.76%, rgba(99, 190, 255, 0.87) 108.77%);;
   background-size: contain;
   margin: 0 -20px;
   padding: 250px 20px;
@@ -117,6 +117,12 @@ $hobby_card_img_size_div: 2.5;
   align-items: center;
 
   flex-direction: column;
+
+  h2{
+    color: var(--color-text);
+    font-size: 32px;
+    font-weight: 700;
+  }
 
   &:before {
     width: calc(100% + 20px * 2);
