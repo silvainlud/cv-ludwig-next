@@ -200,7 +200,6 @@ $hobby_card_img_size_div: 2.5;
   flex-direction: column;
 
 
-
   h2 {
     text-align: center;
   }
@@ -209,7 +208,7 @@ $hobby_card_img_size_div: 2.5;
     display: flex;
     flex-direction: column-reverse;
 
-    @media screen and (min-width: #{$main_max_width - 175px }){
+    @media screen and (min-width: #{$main_max_width - 175px }) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 20px;
@@ -223,7 +222,7 @@ $hobby_card_img_size_div: 2.5;
         margin-top: 30px;
         text-align: center;
 
-        @media screen and (min-width: 900px){
+        @media screen and (min-width: 900px) {
           text-align: left;
         }
 
@@ -279,5 +278,124 @@ $hobby_card_img_size_div: 2.5;
     line-height: 28px;
     text-transform: uppercase;
   }
+
+}
+
+
+.projects {
+  max-width: #{$main_max_width};
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px 100px;
+
+  h2 {
+    text-align: center;
+  }
+
+
+  .projects__list {
+    width: 100%;
+    display: grid;
+    grid-template:
+          "a b c" 250px
+          "d b c" 30px
+          "d b e" 150px / 7fr 3fr 4fr;
+    grid-gap: 15px;
+
+    & > *:nth-child(1) {
+      grid-area: a;
+    }
+
+    & > *:nth-child(2) {
+      grid-area: b;
+    }
+
+    & > *:nth-child(3) {
+      grid-area: c;
+    }
+
+    & > *:nth-child(4) {
+      grid-area: d;
+    }
+
+    & > *:nth-child(5) {
+      grid-area: e;
+    }
+
+    .projects__list__cardMore {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      padding: 10px 15px;
+      background: linear-gradient(104.05deg, rgba(99, 190, 255, 0.51) 17.85%, rgba(99, 190, 255, 0.21) 69.47%);
+      border-radius: 5px;
+
+      p {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      .projects__list__cardMore__btn {
+        font-size: 18px;
+      }
+    }
+
+    .projects__list__card {
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+
+      .projects__list__card__content {
+        display: flex;
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-direction: column;
+
+        opacity: 0;
+        transition: opacity 0.8s;
+
+        hr {
+          max-width: 180px;
+          border: 1px solid var(--color-text-light);
+          width: 100%;
+        }
+
+        h3, p {
+          margin: 0;
+        }
+      }
+
+      img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .8s, filter 0.8s;
+      }
+
+      &:hover {
+        .projects__list__card__content {
+          opacity: 1;
+        }
+
+        img {
+          transform: scale(1.2);
+          filter: blur(4px) grayscale(0.6);
+        }
+      }
+    }
+  }
+
 
 }

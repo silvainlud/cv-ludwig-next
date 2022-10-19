@@ -4,15 +4,17 @@ import React from "react";
 interface ButtonProps {
     href?: string
     children: React.ReactNode,
-    onClick?: (event: React.MouseEvent<HTMLElement>) => void
+    onClick?: (event: React.MouseEvent<HTMLElement>) => void,
+    className?: string
 }
 
-const Button = ({children, href, onClick, ...otherProps}: ButtonProps) => {
-
+const Button = ({children, href, onClick, className, ...otherProps}: ButtonProps) => {
     return <>
         {href === null ?
-            <button className={"btn"} {...otherProps} onClick={onClick}>{children}</button> :
-            <a href={href} className={"btn"} onClick={onClick} {...otherProps}>{children}</a>
+            <button className={"btn" + (className === undefined ? "" : (" " + className))} {...otherProps}
+                    onClick={onClick}>{children}</button> :
+            <a href={href} className={"btn" + (className === undefined ? "" : (" " + className))}
+               onClick={onClick} {...otherProps}>{children}</a>
         }
 
         <style jsx>{`
