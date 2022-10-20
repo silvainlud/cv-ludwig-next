@@ -169,7 +169,7 @@ interface PersonnelProjectsProps {
 
 export const PersonnelProjects = ({projects}: PersonnelProjectsProps) => {
 
-    return <section id="contact-me" className={styles.projects}>
+    return <section id="portfolio" className={styles.projects}>
         <h2>Mes réalisations</h2>
         <div className={styles.projects__list}>
             {projects.map((x, index) => <PersonnelProjectCard key={index} project={x}></PersonnelProjectCard>)}

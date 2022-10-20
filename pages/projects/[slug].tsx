@@ -1,9 +1,7 @@
-import {useRouter} from "next/router";
 import {NextPage} from "next";
 import Head from "next/head";
 import Base from "../../components/base/Base";
 import {getPersonnelProject, getPersonnelProjectImages, getTechnologiesImages, PersonnelProject} from "../../posts";
-import {getLocFor} from "@typescript-eslint/typescript-estree/dist/node-utils";
 import Image from "next/future/image";
 
 import styles from './../../styles/components/project.module.scss'
@@ -98,7 +96,7 @@ const Post: NextPage<PostProps> = ({project, images, technologiesImages}) => {
 
                             <div>
                                 <h4>Lien</h4>
-                                <p><a href={project.link}>{project.link}</a></p>
+                                <p><a href={project.link} rel="noreferrer" target="_blank">{project.link}</a></p>
                             </div>
 
 

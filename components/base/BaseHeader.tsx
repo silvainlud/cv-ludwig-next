@@ -23,11 +23,10 @@ const BaseHeader: React.FC<BaseHeaderProps> = ({mainTitle = false}) => {
             </Link>
             <div className={styles.headerBar__separator}></div>
             <nav className={styles.headerBar__nav}>
-                <a className={styles.headerBar__nav__link} href="#">Services</a>
-                <a className={styles.headerBar__nav__link} href="#">Compétences</a>
-                <a className={styles.headerBar__nav__link} href="#">Portfolio</a>
-                <a className={styles.headerBar__nav__link} href="#">Expériences</a>
-                <a className={styles.headerBar__nav__link} href="#">Contact</a>
+                <Link href={"/#skills"}><a className={styles.headerBar__nav__link}>Compétences</a></Link>
+                <Link href={"/#portfolio"}><a className={styles.headerBar__nav__link}>Portfolio</a></Link>
+                <Link href={"/#curriculum"}><a className={styles.headerBar__nav__link}>Expériences</a></Link>
+                <Link href={"/#contact-me"}><a className={styles.headerBar__nav__link}>Contact</a></Link>
             </nav>
         </div>
 
