@@ -2,7 +2,7 @@ import {useRouter} from "next/router";
 import {NextPage} from "next";
 import Head from "next/head";
 import Base from "../../components/base/Base";
-import {getPersonnelProject, getPersonnelProjectImages, PersonnelProject} from "../../posts";
+import {getPersonnelProject, getPersonnelProjectImages, getTechnologiesImages, PersonnelProject} from "../../posts";
 import {getLocFor} from "@typescript-eslint/typescript-estree/dist/node-utils";
 import Image from "next/future/image";
 
@@ -31,6 +31,7 @@ interface PostStaticParamProps {
 interface PostProps {
     project: PersonnelProject;
     images: string[]
+    technologiesImages: string[]
 }
 
 export async function getStaticProps({params}: PostStaticProps) {
@@ -42,11 +43,16 @@ export async function getStaticProps({params}: PostStaticProps) {
         props: {
             project: project,
             images: images,
+            technologiesImages: getTechnologiesImages()
         } as PostProps,
     };
 }
 
-const Post: NextPage<PostProps> = ({project, images}) => {
+const Post: NextPage<PostProps> = ({project, images, technologiesImages}) => {
+
+    const getTechnologyImage = (technology: string) => {
+        return technologiesImages.find(x => x.toLowerCase().split(".")[0] == technology.replace(" ", "-").toLowerCase())
+    }
 
     return <>
         <Head>
@@ -66,7 +72,7 @@ const Post: NextPage<PostProps> = ({project, images}) => {
 
                         <div className={styles.projectArticle__gallery}>
                             {images.map((x, index) =>
-                                <Link key={index}  href={x}>
+                                <Link key={index} href={x}>
                                     <a className={styles.projectArticle__gallery__item} target="_blank">
                                         <Image src={require("./../../public/projects/" + x)} alt={x}/>
                                     </a>
@@ -75,48 +81,44 @@ const Post: NextPage<PostProps> = ({project, images}) => {
                         </div>
                     </div>
 
-                    <div>
-                        <div className="art_info">
+                    <div className={styles.projectArticle__informations}>
 
-                            <div className="art_info-data">
-                                <h2>Informations</h2>
-                                <div className="art-info-table">
+                        <div className={styles.projectArticle__informations__item}>
+                            <h2>Informations</h2>
 
 
-                                    <div className="art-info-table_icon">
-                                        <i className="fas fa-calendar-alt"></i>
-                                    </div>
-                                    <div>
-                                        <h4>Date de mise en production</h4>
-                                        <p>{project.date}</p>
-                                    </div>
-
-                                    <div className="art-info-table_icon">
-                                        <i className="fas fa-clock"></i>
-                                    </div>
-                                    <div>
-                                        <h4>Temps</h4>
-                                        <p>{project.time}</p>
-                                    </div>
-
-
-                                    <div className="art-info-table_icon">
-                                        <i className="fas fa-link"></i>
-                                    </div>
-                                    <div>
-                                        <h4>Lien</h4>
-                                        <p><a href={project.link}>{project.link}</a></p>
-                                    </div>
-
-
-                                </div>
+                            <div>
+                                <h4>Date de mise en production</h4>
+                                <p>{project.date}</p>
                             </div>
-                            <div className="art_info-tech">
-
-                                <h3>Technologies Utilisées</h3>
-
-
+                            <div>
+                                <h4>Temps</h4>
+                                <p>{project.time}</p>
                             </div>
+
+                            <div>
+                                <h4>Lien</h4>
+                                <p><a href={project.link}>{project.link}</a></p>
+                            </div>
+
+
+                        </div>
+                        <div>
+
+                            <h3>Technologies Utilisées</h3>
+                            <ul>
+                                {project.technologies.map((x, index) => {
+
+                                    const img = getTechnologyImage(x)
+                                    console.log(img)
+                                    return <li key={index}>
+                                        {img && <Image src={require("./../../public/technologies/" + img)} alt={x}
+                                                       width={24} height={24}/>}
+                                        <span>{x}</span>
+                                    </li>
+                                })}
+                            </ul>
+
                         </div>
                     </div>
                 </div>

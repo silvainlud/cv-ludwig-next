@@ -8,6 +8,7 @@ import {StaticImageData} from "next/image";
 const postsDirectory = path.join(process.cwd(), 'posts//hobbies/');
 const projectDirectory = path.join(process.cwd(), 'posts//projects/');
 const projectImagesDirectory = path.join(process.cwd(), './public/projects/');
+const technologiesImagesDirectory = path.join(process.cwd(), './public/technologies/');
 
 export interface Hobby {
     slug: string;
@@ -64,6 +65,12 @@ export interface PersonnelProject {
 export function getPersonnelProjectImages(project: PersonnelProject): string[] {
     const fileNames = fs.readdirSync(projectImagesDirectory);
     return fileNames.filter(x => x.startsWith(project.slug));
+
+}
+
+export function getTechnologiesImages(): string[] {
+    const fileNames = fs.readdirSync(technologiesImagesDirectory);
+    return fileNames;
 
 }
 
