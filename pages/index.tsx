@@ -34,7 +34,7 @@ const Home: NextPage<HomeProps> = ({hobbies, projects}) => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
-            <Base>
+            <Base mainTitle={true}>
                 <>
                     <AboutMe/>
                     <Hobbies hobbies={hobbies}/>

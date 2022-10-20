@@ -3,13 +3,17 @@
 .header {
   position: relative;
   width: 100%;
-  min-height: 805px;
+  min-height: 250px;
   overflow: hidden;
   background: url("./../../public/header-bg.svg") no-repeat bottom;
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &.header__index {
+    min-height: 805px;
+  }
 
 }
 
@@ -38,6 +42,12 @@
   flex-direction: row;
   align-items: center;
   gap: 14px;
+  text-decoration: unset;
+
+  &:hover .headerBar__title_app{
+    transition: 0.3s color;
+    color: var(--color-text-light);
+  }
 }
 
 .headerBar__title_img {
@@ -94,7 +104,7 @@
 
   grid-template-columns: 1fr;
 
-    @media screen and (min-width: $width_separator_1) {
+  @media screen and (min-width: $width_separator_1) {
     grid-template-columns: 500px 1fr;
   }
 
