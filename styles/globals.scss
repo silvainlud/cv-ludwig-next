@@ -12,6 +12,12 @@ body {
   box-sizing: border-box;
 }
 
+h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+}
+
 :root {
   --color-black: #2C3E50;
   --color-black-light: #{lighten(#2C3E50, 20%)};
@@ -27,6 +33,7 @@ main a:not(.btn) {
 
 
   transition: color 0.3s;
+
   &:hover, &:focus {
     color: var(--color-text);
     text-decoration: underline;

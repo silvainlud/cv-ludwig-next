@@ -39,7 +39,7 @@ const BaseHeader: React.FC<BaseHeaderProps> = ({mainTitle = false}) => {
                     <div className={styles.headerApp__content_description}>Développeur Application Web Fullstack</div>
                     <MediaList/>
                     <div>
-                        <Button href="">En savoir plus</Button>
+                        <Button href="/#about-me">En savoir plus</Button>
                     </div>
                 </div>
             </div>

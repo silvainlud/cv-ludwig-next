@@ -1,30 +1,29 @@
 import type {NextPage} from 'next'
-import Head from 'next/head'
 import Base from "../components/base/Base";
-import {AboutMe, ContactMe, Curriculum, Hobbies, PersonnelProjects} from "../components/pages/IndexPart";
-import {getHobbies, getPersonnelProject, Hobby, PersonnelProject} from "../posts";
+import {AboutMe, ContactMe, Curriculum, Hobbies, PersonnelProjects, Skills} from "../components/pages/IndexPart";
+import {getHobbies, getPersonnelProject, getTechnologiesImages, Hobby, PersonnelProject} from "../posts";
 
 export async function getStaticProps() {
 
     const hobbies = await getHobbies()
     const projects = await getPersonnelProject()
 
-    console.log(projects)
-
     return {
         props: {
             hobbies,
-            projects
+            projects,
+            technologiesImages: getTechnologiesImages()
         }
     }
 }
 
 interface HomeProps {
     hobbies: Hobby[]
-    projects: PersonnelProject[]
+    projects: PersonnelProject[],
+    technologiesImages: string[]
 }
 
-const Home: NextPage<HomeProps> = ({hobbies, projects}) => {
+const Home: NextPage<HomeProps> = ({hobbies, projects, technologiesImages}) => {
 
     return (
         <>
@@ -33,6 +32,7 @@ const Home: NextPage<HomeProps> = ({hobbies, projects}) => {
                 <>
                     <AboutMe/>
                     <Hobbies hobbies={hobbies}/>
+                    <Skills technologies={technologiesImages}/>
                     <Curriculum/>
                     <PersonnelProjects projects={projects}/>
                     <ContactMe/>
