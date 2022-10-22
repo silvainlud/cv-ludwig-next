@@ -123,7 +123,7 @@ export const Skills: React.FC<SkillProps> = ({technologies}) => {
                     condimentum
                     quis iaculis et, fermentum at felis.</p>
             </SkillItem>
-            <SkillItem title={"Utilitaraire Informatique"} technologies={technologies} icons={[
+            <SkillItem title={"Utilitaire Informatique"} technologies={technologies} icons={[
                 {image: "elk", rotate: -5, width: 48, x: "18%", y: -8},
                 {image: "docker-compose", rotate: -10, width: 48, x: -60, y: "20%"},
                 {image: "kubernestes", rotate: 0, width: 48, x: 20, y: "85%"},
