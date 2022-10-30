@@ -10,9 +10,9 @@ interface SkillTechnology {
 }
 
 export enum SkillLevel {
-    advance = 100,
-    medium= 75,
-    beginner = 45
+    advance = 85,
+    medium= 60,
+    beginner = 40
 }
 
 export function skillLevelToString(level: SkillLevel): string {
