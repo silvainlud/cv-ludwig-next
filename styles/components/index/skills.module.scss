@@ -21,6 +21,10 @@
     flex-wrap: wrap;
     gap: 60px $skill_list_width_gap;
 
+    flex-direction: column;
+    @media screen and (min-width: $main_max_width) {
+      flex-direction: row;
+    }
 
     justify-content: center;
     align-items: center;
@@ -29,7 +33,19 @@
 
   .skills__item {
 
-    width: calc(50% - $skill_list_width_gap / 2);
+    width: 100%;
+
+    @media screen and (min-width: $width_separator_2*0.8) {
+      max-width: $width_separator_2*0.8;
+      .skills__item__content .skills__technology_list {
+        grid-template-columns: repeat(2, minmax(50px, 1fr)) !important;
+      }
+    }
+
+    @media screen and (min-width: $main_max_width) {
+      width: calc(50% - $skill_list_width_gap / 2);
+      max-width: unset;
+    }
 
     display: grid;
     grid-template-columns: 110px 1fr;
@@ -60,7 +76,7 @@
         width: 100%;
 
         display: grid;
-        grid-template-columns: repeat(2,minmax(50px, 1fr));
+        grid-template-columns: 1fr;
         gap: 10px 15px;
 
 

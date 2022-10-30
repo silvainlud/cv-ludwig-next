@@ -41,9 +41,7 @@ const SkillItem: React.FC<SkillItemProps> = ({technologies, skill}) => {
     progressValue = Math.ceil(progressValue / 10) * 10
 
     return <div className={styles.skills__item}>
-        <div>
-            <ProgressCircleBar progress={progressValue}></ProgressCircleBar>
-        </div>
+        <ProgressCircleBar progress={progressValue}></ProgressCircleBar>
         <div className={styles.skills__item__content}>
             <h3>{skill.name}</h3>
             <div className={styles.skills__technology_list}>
