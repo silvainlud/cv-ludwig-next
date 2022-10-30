@@ -33,7 +33,7 @@ const SkillItem: React.FC<SkillItemProps> = ({technologies, skill}) => {
 
 
     const getTechnologyImage = (technology: string) => {
-        return technologies.find(x => x.replace(/\.[^/.]+$/, "").toLowerCase() == technology.replace(" ", "-").replace(".", '').toLowerCase())
+        return technologies.find(x => x.replaceAll(/\.[^/.]+$/, "").toLowerCase() == technology.replaceAll(" ", "-").replaceAll(".", '').toLowerCase())
     }
 
 
@@ -50,8 +50,6 @@ const SkillItem: React.FC<SkillItemProps> = ({technologies, skill}) => {
                 {skill.technologies.map((tech, index) => {
 
                     const images = getTechnologyImage(tech.slug ?? tech.name);
-
-                    console.log(tech.name, images, technologies.find(x => x.replace(/\.[^/.]+$/, "").toLowerCase() == (tech.slug ?? tech.name).replace(" ", "-").replace(".", '').toLowerCase()))
 
                     return <div key={index}
                                 className={styles.skills__technology_item}>

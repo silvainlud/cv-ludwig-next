@@ -1,5 +1,4 @@
 import {NextPage} from "next";
-import Head from "next/head";
 import Base from "../../components/base/Base";
 import {getPersonnelProject, getPersonnelProjectImages, getTechnologiesImages, PersonnelProject} from "../../posts";
 import Image from "next/future/image";
@@ -49,7 +48,7 @@ export async function getStaticProps({params}: PostStaticProps) {
 const Post: NextPage<PostProps> = ({project, images, technologiesImages}) => {
 
     const getTechnologyImage = (technology: string) => {
-        return technologiesImages.find(x => x.toLowerCase().split(".")[0] == technology.replace(" ", "-").toLowerCase())
+        return technologiesImages.find(x => x.toLowerCase().split(".")[0] == technology.replaceAll(" ", "-").replaceAll(".", "").toLowerCase())
     }
 
     return <Base>
