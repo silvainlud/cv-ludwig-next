@@ -48,7 +48,7 @@ export const ContactMe = () => {
                     Si vous avez des questions à me poser (propositions, informations sur les projets que j&apos;ai pu
                     réaliser, ...), vous pouvez me contacter par mail à l&apos;adresse contact@silvain.eu, ou en
                     utilisant le
-                    formulaire de contact ci-dessous
+                    formulaire de contact ci-après
                 </p>
                 <div className={styles.contactMe__informations}>
 
