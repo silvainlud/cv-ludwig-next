@@ -1,0 +1,28 @@
+---
+title: 'Statutis'
+date: 'Avril/Mai 2022'
+link: 'https://github.com/Statutis/'
+technologies: ["HTML", "SCSS", "Javascript", "React", "ASP Net Core", "PostgreSQL", "Figma", "Docker"]
+time: 2 mois
+image: statutis-main.png
+---
+L'application Statutis a pour objectif de vérifier la disponibilité de vos services (exemple : Site web), ainsi que le
+fonctionne de ces derniers. Pour cela, ce logiciel se base sur différents modes de contrôles comme des requêtes
+HTTP ou DNS, et vous permet d'en verifier le résultat (dans une certaine mesure). Ce projet a été développé par Simon
+HEBAN & Ludwig SILVAIN dans le cadre du module d'initiation au WebService lors de la première année de master WedSci de
+l'Université du Littorale Côte d'opale.
+
+
+Pour le côté design, nous avons opté pour la technologie `SCSS` permettant une intégration plus rapide. Nous avons
+sélectionné le framework React couplé à TypeScript. Un linter est aussi présent pour pouvoir développer et maintenir un code de qualité.
+Pour nous assurer de la compatibilité de notre application, nous avons installé PostCSS permettant la compatibilité du
+CSS sur une multitude de navigateurs. Du côté du Javascript nous avons opté pour l'utilisation de TypeScript qui permet
+une harmonisation de notre code et supprime les ambiguïtés du langage. Toutes ces technologies s'articulent autour d'un
+module bundler : Vite.JS.
+
+
+La partie backend de cette application comporte une API et une tâche automatisée (pour la vérification des status de
+services) tous deux développer en C# .Net Core 6. Pour plus de simplicité aussi bien pour le développement que pour la
+maintenance, nous avons opté pour l'utilisation du design N-Tiers. Concernant le déploiement, nous avons fait le choix de
+docker.
+

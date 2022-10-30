@@ -1,4 +1,5 @@
 @import "./../../../components/vars";
+
 .projects {
   max-width: #{$main_max_width};
   width: 100%;
@@ -15,9 +16,9 @@
     width: 100%;
     display: grid;
     grid-template:
-          "a b c" 250px
+          "a b c" 270px
           "d b c" 60px
-          "d b e" 150px / 7fr 3fr 4fr;
+          "d b e" 200px / 6fr 4fr 4fr;
     grid-gap: 15px;
 
     & > *:nth-child(1) {
@@ -99,6 +100,8 @@
         height: 100%;
         object-fit: cover;
         transition: transform .8s, filter 0.8s;
+        width: 100%;
+        object-position: top center;
       }
 
       &:hover {

@@ -47,6 +47,7 @@
         height: 220px;
 
         transition: transform .800s; /* Animation */
+        object-position: top center;
         &:hover {
           transform: scale(1.25);
         }
@@ -61,6 +62,7 @@
     object-fit: cover;
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
     margin-bottom: 40px;
+    object-position: top center;
   }
 
   .projectArticle__informations {
