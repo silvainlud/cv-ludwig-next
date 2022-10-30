@@ -17,8 +17,8 @@
     display: grid;
     grid-template:
           "a b c" 270px
-          "d b c" 60px
-          "d b e" 200px / 6fr 4fr 4fr;
+          "d b c" 100px
+          "d b e" 150px / 6fr 4fr 4fr;
     grid-gap: 15px;
 
     & > *:nth-child(1) {
@@ -50,6 +50,7 @@
       background: linear-gradient(104.05deg, rgba(99, 190, 255, 0.51) 17.85%, rgba(99, 190, 255, 0.21) 69.47%);
       border-radius: 5px;
 
+      justify-content: center;
       p {
         font-weight: 300;
         font-size: 16px;
