@@ -88,7 +88,7 @@ export const SkillItem: React.FC<SkillItemProps> = ({technologies, skill}) => {
 
                     return <div key={index}
                                 className={styles.skills__technology_item}>
-                        {images && <Image src={require(`./../../public/technologies/${images}`)} alt={tech.name}/>}
+                        {images && <Image src={require(`./../../public/technologies/${images}`)} alt={tech.name} width={30} height={30}/>}
                         <span>{tech.name}</span>
                         {tech.level && <>
                             <span>-</span>
