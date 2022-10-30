@@ -66,7 +66,7 @@ export const SkillItem: React.FC<SkillItemProps> = ({technologies, skill}) => {
 
 
     const getTechnologyImage = (technology: string) => {
-        return technologies.find(x => x.replaceAll(/\.[^/.]+$/, "").toLowerCase() == technology.replaceAll(" ", "-").replaceAll(".", '').toLowerCase())
+        return technologies.find(x => x.replace(/\.[^/.]+$/, "").toLowerCase() == technology.replaceAll(" ", "-").replaceAll(".", '').toLowerCase())
     }
 
 
