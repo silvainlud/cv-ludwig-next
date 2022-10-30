@@ -1,0 +1,88 @@
+@import "./../../../components/vars";
+
+.contactMe {
+  max-width: #{$main_max_width - 175px };
+  display: flex;
+  flex-direction: column;
+
+
+  h2 {
+    text-align: center;
+  }
+
+  .contactMe__grid {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @media screen and (min-width: #{$main_max_width - 175px }) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+    }
+
+    & > * {
+      display: flex;
+      flex-direction: column;
+
+      &:nth-child(2) {
+        margin-top: 30px;
+        text-align: center;
+
+        @media screen and (min-width: 900px) {
+          text-align: left;
+        }
+
+      }
+    }
+  }
+
+  .contactMe__card_group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    label {
+      margin-left: 15px;
+    }
+
+    input, textarea {
+      border: 1px solid #DDDDDD;
+      border-radius: 5px;
+      padding: 12px 17px;
+      outline: none;
+
+      &:focus, &:hover {
+        border: 1px solid #a8a8a8;
+      }
+
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 100px;
+    }
+  }
+
+  .contactMe__card_submit {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .contactMe__card {
+    background: #F4F6F8;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    border-radius: 15px;
+  }
+
+  .contactMe__title {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+
+}

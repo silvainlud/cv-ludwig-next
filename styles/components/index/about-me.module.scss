@@ -1,0 +1,37 @@
+@import "./../../../components/vars";
+
+$about_me_img_width: 350px;
+
+.aboutMe {
+  max-width: #{$main_max_width - 250px};
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  grid-gap: 40px;
+
+  @media screen and (min-width: $width_separator_1) {
+    grid-template-columns: 1fr $about_me_img_width;
+  }
+
+  .aboutMe__image {
+    border-radius: 5px;
+    max-height: $about_me_img_width;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .aboutMe__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @media screen and (min-width: $width_separator_1) {
+      text-align: unset;
+    }
+
+    .aboutMe__presentation {
+      text-indent: 25px;
+    }
+  }
+
+}

@@ -1,0 +1,105 @@
+@import "./../../../components/vars";
+
+
+.skills {
+  max-width: #{$main_max_width};
+  width: 100%;
+  margin: 100px 0 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  $skill_list_width_gap: 30px;
+
+  .skills__list {
+    width: 100%;
+    margin-top: 40px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px $skill_list_width_gap;
+
+
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .skills__item {
+
+    width: calc(50% - $skill_list_width_gap / 2);
+
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    align-items: center;
+
+
+    .skills__item__content {
+      padding: 0 20px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      h3 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 21px;
+        letter-spacing: 0.01em;
+        text-indent: 13px;
+        color: var(--color-text);
+      }
+
+
+      width: 100%;
+
+      .skills__technology_list {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(2,minmax(50px, 1fr));
+        gap: 10px 15px;
+
+
+        .skills__technology_item {
+
+
+          display: flex;
+          gap: 5px;
+          align-items: center;
+
+          img {
+            height: 28px;
+            width: 28px;
+            object-fit: contain;
+          }
+
+          $technology_level_color_badge: (
+                  yellow : (background:#E8A207, color:#FAE5B8),
+                  blue : (background:#6A9AE8, color:#C9DBF8),
+                  red : (background:#FF6E6C, color:#F4D7D7),
+          );
+
+          .skills__technology_level {
+            font-size: 12px;
+            padding: 3px 11px;
+
+            color: #E8A207;
+            background: #FAE5B8;
+            border-radius: 7px;
+
+            @each $className, $colors in $technology_level_color_badge {
+              &.skills__technology_level_#{$className} {
+                background: map-get($colors, "color");
+                color: map-get($colors, "background");
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
