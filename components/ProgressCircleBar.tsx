@@ -10,7 +10,7 @@ interface ProgressCircleBarProps {
 
 export const ProgressCircleBar: React.FC<ProgressCircleBarProps> = ({color, progress, bgColor}) => {
 
-    const rotationFirst = progress <= 50 ? 180 - progress * 3.6 : 180;
+    const rotationFirst = progress <= 50 ? progress * 3.6 : 180;
     const rotationSecond = progress <= 50 ? 180 * 2 : progress * 3.6;
 
     return <>

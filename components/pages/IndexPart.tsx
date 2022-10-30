@@ -7,6 +7,8 @@ import {Hobby, PersonnelProject} from "../../posts";
 import Button from "../Button";
 import React, {useState} from "react";
 import Link from "next/link";
+import {Skill, SkillLevel, skillLevelToColor, skillLevelToString} from "../../posts/SkillList";
+import {ProgressCircleBar} from "../ProgressCircleBar";
 
 export const AboutMe = () => {
     return <section id="about-me" className={styles.aboutMe}>
@@ -49,94 +51,63 @@ const HobbyCard = ({hobby}: HobbyProps) => {
         </div>
     </div>
 }
-
-interface SkillItemIcon {
-    x?: number | string,
-    y?: number | string,
-    rotate?: number,
-    width?: number,
-    image: string
-}
-
 interface SkillItemProps {
-    children: JSX.Element,
-    title: string
-    icons?: SkillItemIcon[],
+    skill: Skill
     technologies: string[],
+
 }
 
 interface SkillProps {
+    skills: Skill[]
     technologies: string[],
 }
 
-export const SkillItem: React.FC<SkillItemProps> = ({children, title, icons = [], technologies}) => {
+export const SkillItem: React.FC<SkillItemProps> = ({technologies, skill}) => {
 
 
     const getTechnologyImage = (technology: string) => {
         return technologies.find(x => x.replace(/\.[^/.]+$/, "").toLowerCase() == technology.replace(" ", "-").replace(".", '').toLowerCase())
     }
+
+
+    let progressValue = skill.technologies.reduce((partialSum, a) => partialSum + (a.level ?? 0 as number), 0) * 100 / ((SkillLevel.advance as number) * skill.technologies.length);
+    progressValue = Math.ceil(progressValue / 10) * 10
+
     return <div className={styles.skills__item}>
-        <div className={styles.skills__item__content}>
-            <h3>{title}</h3>
-            {children}
+        <div>
+            <ProgressCircleBar progress={progressValue}></ProgressCircleBar>
         </div>
-        {icons?.map((x, index) =>
-            <Image key={index} src={require(`./../../public/technologies/${getTechnologyImage(x.image)}`)}
-                   alt={x.image} width={x.width} className={styles.skills__item__icon} title={x.image}
-                   style={{top: x.y, left: x.x, transform: "rotate(" + x.rotate + "deg)"}}/>
-        )}
+        <div className={styles.skills__item__content}>
+            <h3>{skill.name}</h3>
+            <div className={styles.skills__technology_list}>
+                {skill.technologies.map((tech, index) => {
+
+                    const images = getTechnologyImage(tech.slug ?? tech.name);
+
+                    console.log(tech.name, images, technologies.find(x => x.replace(/\.[^/.]+$/, "").toLowerCase() == (tech.slug ?? tech.name).replace(" ", "-").replace(".", '').toLowerCase()))
+
+                    return <div key={index}
+                                className={styles.skills__technology_item}>
+                        {images && <Image src={require(`./../../public/technologies/${images}`)} alt={tech.name}/>}
+                        <span>{tech.name}</span>
+                        {tech.level && <>
+                            <span>-</span>
+                            <span
+                                className={styles.skills__technology_level + " " + styles["skills__technology_level_" + skillLevelToColor(tech.level)]}>{skillLevelToString(tech.level)}</span>
+                        </>}
+                    </div>
+                })}
+            </div>
+        </div>
     </div>
 }
 
-export const Skills: React.FC<SkillProps> = ({technologies}) => {
+export const Skills: React.FC<SkillProps> = ({technologies, skills}) => {
 
     return <section id="skills" className={styles.skills}>
         <h2>Mes compétences</h2>
         <div className={styles.skills__list}>
-            <SkillItem title={"Développement Web"} icons={[
-                {image: "nodejs", rotate: 21, width: 40, x: "-5%", y: 26},
-                {image: "php", rotate: -7, width: 70, x: "20%", y: -15},
-                {image: "net core", rotate: 5, width: 70, x: "-4%", y: "90%"},
-                {image: "symfony", rotate: 10, width: 50, x: "45%", y: "99%"},
-                {image: "twig", rotate: 7, width: 26, x: "67%", y: "95%"},
-                {image: "vuejs", rotate: -8, width: 40, x: "70%", y: -15},
-                {image: "react", rotate: 0, width: 51, x: "80%", y: -5},
-                {image: "mysql", rotate: -33, width: 91, x: "95%", y: "80%"},
-            ]} technologies={technologies}>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in sapien non augue semper dapibus.
-                    Praesent scelerisque, magna sodales pulvinar lacinia, justo sapien pharetra erat, suscipit imperdiet
-                    enim tortor id diam. Nunc placerat convallis lacus, lacinia dignissim diam. Proin est ex,
-                    condimentum
-                    quis iaculis et, fermentum at felis.</p>
-            </SkillItem>
-            <SkillItem title={"Développement Applicatif"} technologies={technologies} icons={[
-                {image: "net core", rotate: 5, width: 48, x: "18%", y: 0},
-                {image: "sqlserver", rotate: -10, width: 64, x: -80, y: "45%"},
-                {image: "android", rotate: 10, width: 55, x: 40, y: "85%"},
-                {image: "oracle database", rotate: 30, width: 55, x: "75%", y: "85%"},
-                {image: "c sharp", rotate: -20, width: 64, x: "100%", y: "85%"},
-                {image: "wpf", rotate: -17, width: 140, x: "72%", y: 0},
-            ]}>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in sapien non augue semper dapibus.
-                    Praesent scelerisque, magna sodales pulvinar lacinia, justo sapien pharetra erat, suscipit imperdiet
-                    enim tortor id diam. Nunc placerat convallis lacus, lacinia dignissim diam. Proin est ex,
-                    condimentum
-                    quis iaculis et, fermentum at felis.</p>
-            </SkillItem>
-            <SkillItem title={"Utilitaire Informatique"} technologies={technologies} icons={[
-                {image: "elk", rotate: -5, width: 48, x: "18%", y: -8},
-                {image: "docker-compose", rotate: -10, width: 48, x: -60, y: "20%"},
-                {image: "kubernestes", rotate: 0, width: 48, x: 20, y: "85%"},
-                {image: "ansible", rotate: 0, width: 48, x: "60%", y: "95%"},
-                {image: "git", rotate: 5, width: 50, x: "100%", y: "85%"},
-                {image: "docker", rotate: -17, width: 48, x: "85%", y: 5},
-            ]}>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in sapien non augue semper dapibus.
-                    Praesent scelerisque, magna sodales pulvinar lacinia, justo sapien pharetra erat, suscipit imperdiet
-                    enim tortor id diam. Nunc placerat convallis lacus, lacinia dignissim diam. Proin est ex,
-                    condimentum
-                    quis iaculis et, fermentum at felis.</p>
-            </SkillItem>
+            {skills?.map((x, index) => <SkillItem skill={x} technologies={technologies} key={index}/>)}
         </div>
     </section>
 }
@@ -242,7 +213,7 @@ interface PersonnelProjectCardProps {
 }
 
 const PersonnelProjectCard = ({project}: PersonnelProjectCardProps) => {
-    return <Link href={`/projects/${encodeURIComponent(project.slug)}`}>
+    return <Link href={` / projects /${encodeURIComponent(project.slug)}`}>
         <a className={styles.projects__list__card}>
             <div className={styles.projects__list__card__content}>
                 <h3>{project.title}</h3>
