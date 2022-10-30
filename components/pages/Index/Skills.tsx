@@ -37,7 +37,7 @@ const SkillItem: React.FC<SkillItemProps> = ({technologies, skill}) => {
     }
 
 
-    let progressValue = skill.technologies.reduce((partialSum, a) => partialSum + (a.level ?? 0 as number), 0) * 100 / ((SkillLevel.advance as number) * skill.technologies.length);
+    let progressValue = skill.technologies.reduce((partialSum, a) => partialSum + (a.level ?? 0 as number), 0) * 100 / ((SkillLevel.advance as number) * skill.technologies.filter(x => x.level).length);
     progressValue = Math.ceil(progressValue / 10) * 10
 
     return <div className={styles.skills__item}>
