@@ -16,7 +16,7 @@ export const PersonnelProjects = ({projects}: PersonnelProjectsProps) => {
         <div className={styles.projects__list}>
             {projects.map((x, index) => <PersonnelProjectCard key={index} project={x}></PersonnelProjectCard>)}
             <div className={styles.projects__list__cardMore}>
-                <p>Vous pouvez consulter d’autre de mes projets sur ma page github</p>
+                <p>Vous pouvez consulter mes autres projets sur ma page github</p>
                 <Button href="https://github.com/silvainlud" className={styles.projects__list__cardMore__btn}>Accéder à
                     mon Github</Button>
             </div>
