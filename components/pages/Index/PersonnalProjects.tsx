@@ -25,7 +25,6 @@ export const PersonnelProjects = ({projects}: PersonnelProjectsProps) => {
 }
 
 
-
 // CHILD COMPONENT
 
 
@@ -34,7 +33,7 @@ interface PersonnelProjectCardProps {
 }
 
 const PersonnelProjectCard = ({project}: PersonnelProjectCardProps) => {
-    return <Link href={` / projects /${encodeURIComponent(project.slug)}`}>
+    return <Link href={`/projects/${encodeURIComponent(project.slug)}`}>
         <a className={styles.projects__list__card}>
             <div className={styles.projects__list__card__content}>
                 <h3>{project.title}</h3>
