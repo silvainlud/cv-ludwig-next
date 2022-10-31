@@ -20,7 +20,7 @@ export function skillLevelToString(level: SkillLevel): string {
         case SkillLevel.advance:
             return "Avancé"
         case SkillLevel.medium:
-            return "Intérimaire"
+            return "Intermédiaire"
         case SkillLevel.beginner:
             return "Débutant"
     }
