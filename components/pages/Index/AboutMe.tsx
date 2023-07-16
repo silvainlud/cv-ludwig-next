@@ -8,11 +8,10 @@ export const AboutMe = () => {
         <div className={styles.aboutMe__content}>
             <h2>Ludwig SILVAIN</h2>
             <p className={styles.aboutMe__presentation}>
-                Après avoir obtenu une licence et une première année de master et riche de 4 ans d’une expérience
+                Après avoir obtenu une licence et une première année de master et riche de 5 ans d’une expérience
                 professionelle dans le domaine du numérique, je souhaite désormais approfondir mes connaissances et
-                développer mes acquis. Je candidate donc pour un stage qui me permettrait de réaliser ces objectifs. Je
-                suis très déterminé à accomplir mes projets et je vais mettre tous les moyens à ma disposition pour y
-                parvenir.
+                développer mes acquis. Je suis très déterminé à accomplir mes projets et je vais mettre tous les moyens
+                à ma disposition pour y parvenir.
             </p>
 
             <div className={styles.aboutMe__informations}>
