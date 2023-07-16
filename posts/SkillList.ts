@@ -49,6 +49,7 @@ export default [
             {name: "C# Asp .net Core (API)", slug: "c-sharp", level: SkillLevel.beginner},
             {name: "Symfony", level: SkillLevel.advance},
             {name: "Twig", level: SkillLevel.medium},
+            {name: "Spring Boot (Java)", slug: "spring-boot", level: SkillLevel.medium},
         ]
     },
     {
