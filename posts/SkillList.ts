@@ -59,8 +59,8 @@ export default [
             {name: "CSS", level: SkillLevel.advance},
             {name: "Javascript", level: SkillLevel.medium},
             {name: "NodeJs", level: SkillLevel.medium},
-            {name: "React", level: SkillLevel.beginner},
-            {name: "VueJs", level: SkillLevel.beginner},
+            {name: "React", level: SkillLevel.medium},
+            {name: "VueJs", level: SkillLevel.medium},
         ]
     },
     {
