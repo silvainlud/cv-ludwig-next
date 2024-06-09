@@ -10,7 +10,7 @@ const BaseFooter = () => {
 
         </div>
         <div className={styles.footer_copyright}>
-            Copyright © Ludwig SILVAIN 2022
+            Copyright © Ludwig SILVAIN {new Date().getFullYear()}
         </div>
     </footer>
 }
