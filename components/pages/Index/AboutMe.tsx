@@ -4,6 +4,13 @@ import ProfilPhoto from "../../../public/profil.jpg";
 import React from "react";
 
 export const AboutMe = () => {
+    const calculateAge = () => {
+        const birthDate = new Date(2000, 4, 17);
+        const difference = Date.now() - birthDate.getTime();
+        const ageDate = new Date(difference);
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
+
     return <section id="about-me" className={styles.aboutMe}>
         <div className={styles.aboutMe__content}>
             <h2>Ludwig SILVAIN</h2>
@@ -15,7 +22,7 @@ export const AboutMe = () => {
             </p>
 
             <div className={styles.aboutMe__informations}>
-                <p><b>Age :</b> 22 ans</p>
+                <p><b>Age :</b> {calculateAge()} ans</p>
                 <p><b>Email :</b> contact@silvain.eu</p>
                 <p><b>Adresse :</b> Pas de Calais , France</p>
                 <p><b>Github :</b> <a href="https://github.com/silvainlud">https://github.com/silvainlud</a></p>
