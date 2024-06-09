@@ -24,7 +24,7 @@ export const AboutMe = () => {
             <div className={styles.aboutMe__informations}>
                 <p><b>Age :</b> {calculateAge()} ans</p>
                 <p><b>Email :</b> contact@silvain.eu</p>
-                <p><b>Adresse :</b> Pas de Calais , France</p>
+                <p><b>Adresse :</b> Lille , France</p>
                 <p><b>Github :</b> <a href="https://github.com/silvainlud">https://github.com/silvainlud</a></p>
             </div>
         </div>
