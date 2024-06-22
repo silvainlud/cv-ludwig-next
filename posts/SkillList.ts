@@ -6,6 +6,7 @@ export interface Skill {
 interface SkillTechnology {
     name: string,
     slug?: string,
+    information?: string,
     level?: SkillLevel
 }
 
@@ -46,9 +47,9 @@ export default [
     {
         name: "Développement  Web Backend ", technologies: [
             {name: "PHP", level: SkillLevel.advance},
-            {name: "C# Asp .net Core (API)", slug: "c-sharp", level: SkillLevel.beginner},
+            {name: "C# ASP .NET Core (API)", slug: "c-sharp", level: SkillLevel.beginner},
             {name: "Symfony", level: SkillLevel.advance},
-            {name: "Twig", level: SkillLevel.medium},
+            // {name: "Twig", level: SkillLevel.medium},
             {name: "Spring Boot (Java)", slug: "spring-boot", level: SkillLevel.medium},
         ]
     },
@@ -58,7 +59,7 @@ export default [
             {name: "SCSS", level: SkillLevel.advance},
             {name: "CSS", level: SkillLevel.advance},
             {name: "Javascript", level: SkillLevel.medium},
-            {name: "NodeJs", level: SkillLevel.medium},
+            // {name: "NodeJs", level: SkillLevel.medium},
             {name: "React", level: SkillLevel.medium},
             {name: "VueJs", level: SkillLevel.medium},
         ]
@@ -68,7 +69,7 @@ export default [
             {name: "SQL", level: SkillLevel.medium},
             {name: "Mysql", level: SkillLevel.medium},
             {name: "MariaDB", level: SkillLevel.medium},
-            {name: "Oracle DB", slug: "oracle database", level: SkillLevel.beginner},
+            // {name: "Oracle DB", slug: "oracle database", level: SkillLevel.beginner},
             {name: "SQL Server", level: SkillLevel.beginner},
         ]
     },
@@ -76,17 +77,17 @@ export default [
         name: "Outils informatiques", technologies: [
             {name: "Git", level: SkillLevel.medium},
             {name: "Docker", level: SkillLevel.medium},
-            {name: "Suite ELK", slug: "ELK", level: SkillLevel.medium},
+            // {name: "Suite ELK", slug: "ELK", level: SkillLevel.medium},
             {name: "Ansible", level: SkillLevel.medium},
             {name: "Suite Jetbrains", slug: "jetbrains"},
-            {name: "Figma"},
+            // {name: "Figma"},
         ]
     },
     {
         name: "Autres Technologies", technologies: [
             {name: "C++", slug: "cpp", level: SkillLevel.beginner},
             {name: "Android", slug: "android", level: SkillLevel.medium},
-            {name: "C# WPF", slug: "c sharp", level: SkillLevel.medium},
+            {name: "C# WPF", slug: "c sharp", level: SkillLevel.medium, information: "Windows Presentation Foundation"},
         ]
     },
 ] as Skill[]

@@ -50,6 +50,7 @@ const SkillItem: React.FC<SkillItemProps> = ({technologies, skill}) => {
                     const images = getTechnologyImage(tech.slug ?? tech.name);
 
                     return <div key={index || ''}
+                                title={tech.information}
                                 className={styles.skills__technology_item}>
                         {images &&
                             <Image src={require(`./../../../public/technologies/${images}`)} alt={tech.name} width={30}
