@@ -1,5 +1,5 @@
 import styles from "../../../styles/components/index/about-me.module.scss";
-import Image from "next/future/image";
+import Image from "next/image";
 import ProfilPhoto from "../../../public/profil.jpg";
 import React from "react";
 

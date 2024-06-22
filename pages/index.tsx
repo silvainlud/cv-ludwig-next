@@ -35,20 +35,16 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({hobbies, projects, technologiesImages, skills}) => {
 
     return (
-        <>
-
-            <Base mainTitle={true}>
-                <>
-                    <AboutMe/>
-                    <Hobbies hobbies={hobbies}/>
-                    <Skills technologies={technologiesImages} skills={skills}/>
-                    <Curriculum/>
-                    <PersonnelProjects projects={projects}/>
-                    <ContactMe/>
-                </>
-            </Base>
-
-        </>
+        <Base mainTitle={true}>
+            <>
+                <AboutMe/>
+                <Hobbies hobbies={hobbies}/>
+                <Skills technologies={technologiesImages} skills={skills}/>
+                <Curriculum/>
+                <PersonnelProjects projects={projects}/>
+                <ContactMe/>
+            </>
+        </Base>
     )
 }
 

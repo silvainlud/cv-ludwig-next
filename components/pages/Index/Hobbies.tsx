@@ -1,6 +1,6 @@
 import {Hobby} from "../../../posts";
 import styles from "../../../styles/components/index/hobbies.module.scss";
-import Image from "next/future/image";
+import Image from "next/image";
 import React from "react";
 
 

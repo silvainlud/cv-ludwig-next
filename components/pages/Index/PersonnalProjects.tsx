@@ -3,7 +3,7 @@ import styles from "../../../styles/components/index/personnal-projects.module.s
 import Button from "../../Button";
 import React from "react";
 import Link from "next/link";
-import Image from "next/future/image";
+import Image from "next/image";
 
 interface PersonnelProjectsProps {
     projects: PersonnelProject[]
@@ -33,14 +33,12 @@ interface PersonnelProjectCardProps {
 }
 
 const PersonnelProjectCard = ({project}: PersonnelProjectCardProps) => {
-    return <Link href={`/projects/${encodeURIComponent(project.slug)}`}>
-        <a className={styles.projects__list__card}>
-            <div className={styles.projects__list__card__content}>
-                <h3>{project.title}</h3>
-                <hr/>
-                <p>{project.date}</p>
-            </div>
-            <Image alt={project.slug} src={require("./../../../public/projects/" + project.image)}></Image>
-        </a>
+    return <Link href={`/projects/${encodeURIComponent(project.slug)}`} className={styles.projects__list__card}>
+        <div className={styles.projects__list__card__content}>
+            <h3>{project.title}</h3>
+            <hr/>
+            <p>{project.date}</p>
+        </div>
+        <Image alt={project.slug} src={require("./../../../public/projects/" + project.image)}></Image>
     </Link>
 }

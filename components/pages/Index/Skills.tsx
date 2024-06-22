@@ -2,7 +2,7 @@ import {Skill, SkillLevel, skillLevelToColor, skillLevelToString} from "../../..
 import React from "react";
 import styles from "../../../styles/components/index/skills.module.scss";
 import {ProgressCircleBar} from "../../ProgressCircleBar";
-import Image from "next/future/image";
+import Image from "next/image";
 
 
 interface SkillProps {

@@ -1,5 +1,5 @@
 import styles from './MediaList.module.scss'
-import Image from "next/future/image";
+import Image from "next/image";
 import GithubLogo from "../../../public/media/Octicons-mark-github 1.svg";
 import GitlabLogo from "../../../public/media/gitlab-logo-600 1.svg";
 import LinkedinLogo from "../../../public/media/LinkedIn_Logo 1.svg";

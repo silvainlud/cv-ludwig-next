@@ -1,5 +1,5 @@
 import styles from "../../../styles/components/index/curriculum.module.scss";
-import Image from "next/future/image";
+import Image from "next/image";
 import CurriculumTreeImage from "../../../public/cv-tree_xl.svg";
 import CurriculumTreeSmallImage from "../../../public/cv-tree_small.svg";
 import React from "react";
