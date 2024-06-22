@@ -21,6 +21,7 @@ const Base: React.FC<BaseProps> = ({children, mainTitle = false}) => {
 
             <meta property="og:type" content="website"/>
             <meta property="og:url" content="https://silvain.eu/"/>
+            <meta property="og:site_name" content="Ludwig SILVAIN"/>
             <meta property="og:title" content="Ludwig SILVAIN"/>
             <meta property="og:description" content="Ludwig SILVAIN (Développeur informatique)"/>
             <meta property="og:image" content="https://silvain.eu/site-screen.png"/>
