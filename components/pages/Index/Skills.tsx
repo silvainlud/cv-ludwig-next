@@ -16,7 +16,7 @@ export const Skills: React.FC<SkillProps> = ({technologies, skills}) => {
     return <section id="skills" className={styles.skills}>
         <h2>Mes compétences</h2>
         <div className={styles.skills__list}>
-            {skills?.map((x, index) => <SkillItem skill={x} technologies={technologies} key={index}/>)}
+            {skills?.map((x, index) => <SkillItem skill={x} technologies={technologies} key={index || ''}/>)}
         </div>
     </section>
 }
@@ -49,17 +49,16 @@ const SkillItem: React.FC<SkillItemProps> = ({technologies, skill}) => {
 
                     const images = getTechnologyImage(tech.slug ?? tech.name);
 
-                    return <div key={index}
+                    return <div key={index || ''}
                                 className={styles.skills__technology_item}>
                         {images &&
                             <Image src={require(`./../../../public/technologies/${images}`)} alt={tech.name} width={30}
                                    height={30}/>}
-                        <span>{tech.name}</span>
-                        {tech.level && <>
-                            <span>-</span>
-                            <span
-                                className={styles.skills__technology_level + " " + styles["skills__technology_level_" + skillLevelToColor(tech.level)]}>{skillLevelToString(tech.level)}</span>
-                        </>}
+                        <div>
+                            <span>{tech.name}</span>
+                            {tech.level && <span
+                                className={styles.skills__technology_level + " " + styles["skills__technology_level_" + skillLevelToColor(tech.level)]}>{skillLevelToString(tech.level)}</span>}
+                        </div>
                     </div>
                 })}
             </div>

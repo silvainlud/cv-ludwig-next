@@ -93,6 +93,18 @@
             object-fit: contain;
           }
 
+          span {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+          div {
+            display: flex;
+            gap: 5px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+          }
+
           $technology_level_color_badge: (
                   yellow : (background:#E8A207, color:#FAE5B8),
                   blue : (background:#6A9AE8, color:#C9DBF8),
