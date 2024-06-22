@@ -52,7 +52,7 @@
     $curriculum_image_size: 80px;
 
 
-    margin: 70px 0 20px;
+    margin: 0 0 20px;
 
 
     & > .curriculum__path__image {
@@ -67,6 +67,7 @@
       }
 
       &.curriculum__path__image__xl {
+        height: 87vh;
         display: none;
         @media screen and (min-width: $curriculum_tree_responsive) {
           display: block;
