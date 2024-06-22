@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 5px 20px 0;
 
   &.header__index {
     min-height: 805px;
@@ -44,14 +45,10 @@
   gap: 14px;
   text-decoration: unset;
 
-  &:hover .headerBar__title_app{
+  &:hover .headerBar__title_app {
     transition: 0.3s color;
     color: var(--color-text-light);
   }
-}
-
-.headerBar__title_img {
-
 }
 
 .headerBar__separator {
@@ -163,8 +160,6 @@
         justify-content: flex-start;
       }
 
-      .headerApp__content_media__item {
-      }
     }
 
   }
