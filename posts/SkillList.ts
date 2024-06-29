@@ -79,7 +79,7 @@ export default [
             {name: "Docker", level: SkillLevel.medium},
             // {name: "Suite ELK", slug: "ELK", level: SkillLevel.medium},
             {name: "Ansible", level: SkillLevel.medium},
-            {name: "Suite Jetbrains", slug: "jetbrains"},
+            {name: "Suite Jetbrains", slug: "jetbrains", level: SkillLevel.advance},
             // {name: "Figma"},
         ]
     },
