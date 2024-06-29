@@ -6,10 +6,10 @@ $curriculum_image_height: 218px;
 .curriculum {
   width: calc(100% + 20px * 2);
   display: flex;
-  background: linear-gradient(256.8deg, rgba(99, 190, 255, 0.85) -12.65%, rgba(99, 190, 255, 0.72) -12.64%, rgba(194, 211, 223, 0.18) 20.23%, rgba(99, 190, 255, 0.37) 41.63%, rgba(183, 209, 227, 0.176453) 70.83%, rgba(99, 190, 255, 0.72) 108.76%, rgba(99, 190, 255, 0.87) 108.77%);;
+  background: linear-gradient(256.8deg, rgba(99, 190, 255, 0.85) -12.65%, rgba(99, 190, 255, 0.72) -12.64%, rgba(194, 211, 223, 0.18) 20.23%, rgba(99, 190, 255, 0.37) 41.63%, rgba(183, 209, 227, 0.176453) 70.83%, rgba(99, 190, 255, 0.72) 108.76%, rgba(99, 190, 255, 0.87) 108.77%);
   background-size: contain;
   margin: 0 -20px;
-  padding: 15% 20px;
+  padding: 10% 20px;
   position: relative;
   min-height: 1000px;
   overflow: hidden;
@@ -29,7 +29,7 @@ $curriculum_image_height: 218px;
   &:before {
     width: calc(100% + 20px * 2);
     margin: 0 -20px;
-    height: 218px;
+    height: $curriculum_image_height;
     top: 0;
     left: 0;
     position: absolute;
@@ -71,7 +71,7 @@ $curriculum_image_height: 218px;
       }
 
       &.curriculum__path__image__xl {
-        height: 87vh;
+        height: calc(100vh - #{$curriculum_image_size * 2} - 20px);
         display: none;
         @media screen and (min-width: $curriculum_tree_responsive) {
           display: block;
