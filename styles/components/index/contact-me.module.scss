@@ -16,7 +16,7 @@
 
     @media screen and (min-width: #{$main_max_width - 175px }) {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(150px, 1fr) 1fr;
       grid-gap: 20px;
     }
 
@@ -60,6 +60,9 @@
     textarea {
       width: 100%;
       min-height: 100px;
+      max-height: 250px;
+      max-width: 100%;
+      min-width: 100%;
     }
   }
 
