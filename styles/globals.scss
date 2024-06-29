@@ -8,6 +8,20 @@ body {
   font-size: 16px;
 }
 
+html {
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 20px;
+  scroll-behavior: smooth;
+  height: 100vh;
+
+  section, header, footer {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+}
+
 * {
   box-sizing: border-box;
 }

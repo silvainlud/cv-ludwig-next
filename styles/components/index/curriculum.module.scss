@@ -1,5 +1,8 @@
 @import "./../../../components/vars";
 
+$curriculum_image_size: 80px;
+$curriculum_image_height: 218px;
+
 .curriculum {
   width: calc(100% + 20px * 2);
   display: flex;
@@ -13,6 +16,9 @@
   align-items: center;
 
   flex-direction: column;
+
+  scroll-margin-top: $curriculum_image_height * -1;
+  scroll-margin-bottom: $curriculum_image_height * -1;
 
   h2 {
     color: var(--color-text);
@@ -39,7 +45,6 @@
     position: absolute;
     content: url("./../../../public/cv-bg-mask-bottom.svg");
 
-    //background: ;
     background-size: cover;
 
   }
@@ -49,7 +54,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    $curriculum_image_size: 80px;
 
 
     margin: 0 0 20px;
